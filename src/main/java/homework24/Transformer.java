@@ -1,25 +1,28 @@
 package homework24;
 
-public class Transformer {
-    protected String name; // имя трансформера
+public abstract class Transformer {
 
-    public Transformer(String name) {
+    protected String name;
+    protected String teamName;
+    protected String eyeColor;
+    protected boolean kindness;
+
+    // Конструктор с 4 параметрами — под него сейчас пишутся super(...) в Autobot/Decepticon
+    public Transformer(String name, String teamName, String eyeColor, boolean kindness) {
         this.name = name;
+        this.teamName = teamName;
+        this.eyeColor = eyeColor;
+        this.kindness = kindness;
     }
 
-    public void run() {
-        System.out.println(name + " is running");
-    }
-
-    public void fire() {
-        System.out.println(name + " is firing");
-    }
-
-    public void charge() {
-        System.out.println(name + " is charging");
-    }
-
+    // Показать свойства трансформера
     public void showInfo() {
         System.out.println("Name: " + name);
+        System.out.println("Team: " + teamName);
+        System.out.println("Eye color: " + eyeColor);
+        System.out.println("Kindness: " + kindness);
     }
+
+    // Абстрактный метод по заданию
+    public abstract void transform();
 }

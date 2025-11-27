@@ -1,33 +1,29 @@
 package homework24;
 
-public class Autobot extends Transformer {
-    private String teamName = "Autobots";
-    private String eyeColor = "blue";
-    private boolean kindness = true; // по умолчанию добрые
+public class Autobot extends Transformer implements Action {
 
+    // Конструктор по умолчанию: синие глаза, добрый
     public Autobot(String name) {
-        super(name);
+        super(name, "Autobots", "blue", true);
     }
 
-    // Конструктор, где kindness можно переопределить
+    // Конструктор, если нужно задать kindness самому
     public Autobot(String name, boolean kindness) {
-        super(name);
-        this.kindness = kindness;
-    }
-
-    public void transform() {
-        System.out.println(name + " transforms into a ground transport (car, truck, etc.)");
+        super(name, "Autobots", "blue", kindness);
     }
 
     @Override
-    public void showInfo() {
-        super.showInfo();
-        System.out.println("Team: " + teamName);
-        System.out.println("Eye color: " + eyeColor);
-        System.out.println("Kindness: " + kindness);
+    public void fire() {
+        System.out.println(name + " is firing");
     }
 
-    public void setKindness(boolean kindness) {
-        this.kindness = kindness;
+    @Override
+    public void charge() {
+        System.out.println(name + " is charging");
+    }
+
+    @Override
+    public void transform() {
+        System.out.println(name + " transforms into a ground transport (car, truck, etc.)");
     }
 }

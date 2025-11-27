@@ -1,32 +1,28 @@
 package homework24;
 
-public class Decepticon extends Transformer {
-    private String teamName = "Decepticons";
-    private String eyeColor = "red";
-    private boolean kindness = false; // по умолчанию злые
+public class Decepticon extends Transformer implements Action {
 
+    // По умолчанию: красные глаза, злой
     public Decepticon(String name) {
-        super(name);
+        super(name, "Decepticons", "red", false);
     }
 
     public Decepticon(String name, boolean kindness) {
-        super(name);
-        this.kindness = kindness;
-    }
-
-    public void transform() {
-        System.out.println(name + " transforms into a powerful weapon or air transport");
+        super(name, "Decepticons", "red", kindness);
     }
 
     @Override
-    public void showInfo() {
-        super.showInfo();
-        System.out.println("Team: " + teamName);
-        System.out.println("Eye color: " + eyeColor);
-        System.out.println("Kindness: " + kindness);
+    public void fire() {
+        System.out.println(name + " is firing");
     }
 
-    public void setKindness(boolean kindness) {
-        this.kindness = kindness;
+    @Override
+    public void charge() {
+        System.out.println(name + " is charging");
+    }
+
+    @Override
+    public void transform() {
+        System.out.println(name + " transforms into a powerful weapon or air transport");
     }
 }
