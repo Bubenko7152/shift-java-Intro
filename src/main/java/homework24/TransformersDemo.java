@@ -1,6 +1,7 @@
 package homework24;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TransformersDemo {
@@ -10,16 +11,11 @@ public class TransformersDemo {
         Autobot optimus = new Autobot("Optimus Prime");
         Decepticon megatron = new Decepticon("Megatron");
 
-        // Список трансформеров
-        List<Transformer> transformers = new ArrayList<>();
-        transformers.add(optimus);
-        transformers.add(megatron);
-
         System.out.println("=== Autobot scenario ===");
-        optimus.run();      // из интерфейса Action (default)
+        optimus.run();
         optimus.fire();
         optimus.charge();
-        optimus.transform(); // из абстрактного класса (реализация в Autobot)
+        optimus.transform();
         optimus.showInfo();
 
         System.out.println();
@@ -32,6 +28,9 @@ public class TransformersDemo {
         megatron.showInfo();
 
         System.out.println();
+
+        List<Transformer> transformers = Arrays.asList(optimus, megatron);
+
         System.out.println("=== List of transformers ===");
         for (Transformer transformer : transformers) {
             transformer.showInfo();

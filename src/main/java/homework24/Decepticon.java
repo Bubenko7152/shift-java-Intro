@@ -2,7 +2,7 @@ package homework24;
 
 public class Decepticon extends Transformer implements Action {
 
-    // По умолчанию: красные глаза, злой
+    // Конструктор с предустановленными значениями
     public Decepticon(String name) {
         super(name, "Decepticons", "red", false);
     }
@@ -19,6 +19,11 @@ public class Decepticon extends Transformer implements Action {
     @Override
     public void charge() {
         System.out.println(name + " is charging");
+    }
+
+    @Override
+    public void run() {
+        System.out.println(name + " is running");
     }
 
     @Override

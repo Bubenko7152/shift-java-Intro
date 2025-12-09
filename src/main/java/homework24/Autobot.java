@@ -2,7 +2,7 @@ package homework24;
 
 public class Autobot extends Transformer implements Action {
 
-    // Конструктор по умолчанию: синие глаза, добрый
+    // Конструктор с предустановленными значениями
     public Autobot(String name) {
         super(name, "Autobots", "blue", true);
     }
@@ -20,6 +20,11 @@ public class Autobot extends Transformer implements Action {
     @Override
     public void charge() {
         System.out.println(name + " is charging");
+    }
+
+    @Override
+    public void run() {
+        System.out.println(name + " is running");
     }
 
     @Override
