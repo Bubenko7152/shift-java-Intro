@@ -1,10 +1,25 @@
 package homework24;
 
-public class Transformer {
-    protected String name; // имя трансформера
+public abstract class Transformer {
 
-    public Transformer(String name) {
+    protected String name;
+    protected String teamName;
+    protected String eyeColor;
+    protected boolean kindness;
+
+    public Transformer(String name, String teamName, String eyeColor, boolean kindness) {
         this.name = name;
+        this.teamName = teamName;
+        this.eyeColor = eyeColor;
+        this.kindness = kindness;
+    }
+
+    public void showInfo() {
+        System.out.println("=== Info ===");
+        System.out.println("Name: " + name);
+        System.out.println("Team: " + teamName);
+        System.out.println("Eye color: " + eyeColor);
+        System.out.println("Kindness: " + kindness);
     }
 
     public void run() {
@@ -19,7 +34,5 @@ public class Transformer {
         System.out.println(name + " is charging");
     }
 
-    public void showInfo() {
-        System.out.println("Name: " + name);
-    }
+    public abstract void transform();
 }
